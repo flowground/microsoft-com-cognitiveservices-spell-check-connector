@@ -1,0 +1,105 @@
+{
+    "type": "object",
+    "properties": {
+        "Accept": {
+            "required": false,
+            "type": "string"
+        },
+        "Pragma": {
+            "required": false,
+            "type": "string"
+        },
+        "ActionType": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Edit",
+                "Load"
+            ]
+        },
+        "AppName": {
+            "required": false,
+            "type": "string"
+        },
+        "cc": {
+            "required": false,
+            "type": "string"
+        },
+        "ClientMachineName": {
+            "required": false,
+            "type": "string"
+        },
+        "DocId": {
+            "required": false,
+            "type": "string"
+        },
+        "mkt": {
+            "required": false,
+            "type": "string"
+        },
+        "SessionId": {
+            "required": false,
+            "type": "string"
+        },
+        "SetLang": {
+            "required": false,
+            "type": "string"
+        },
+        "UserId": {
+            "required": false,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "Mode": {
+                    "description": "The type of spelling and grammar checks to perform. The following are the possible values (the values are case insensitive). The default is Proof. 1) Proof—Finds most spelling and grammar mistakes. 2) Spell—Finds most spelling mistakes but does not find some of the grammar errors that Proof catches (for example, capitalization and repeated words)",
+                    "type": "string",
+                    "enum": [
+                        "proof",
+                        "spell"
+                    ]
+                },
+                "PreContextText": {
+                    "description": "A string that gives context to the text string. For example, the text string petal is valid. However, if you set preContextText to bike, the context changes and the text string becomes not valid. In this case, the API suggests that you change petal to pedal (as in bike pedal). This text is not checked for grammar or spelling errors. The combined length of the text string, preContextText string, and postContextText string may not exceed 10,000 characters. You may specify this parameter in the query string of a GET request or in the body of a POST request.",
+                    "type": "string"
+                },
+                "PostContextText": {
+                    "description": "A string that gives context to the text string. For example, the text string read is valid. However, if you set postContextText to carpet, the context changes and the text string becomes not valid. In this case, the API suggests that you change read to red (as in red carpet). This text is not checked for grammar or spelling errors. The combined length of the text string, preContextText string, and postContextText string may not exceed 10,000 characters. You may specify this parameter in the query string of a GET request or in the body of a POST request.",
+                    "type": "string"
+                },
+                "Text": {
+                    "description": "The text string to check for spelling and grammar errors. The combined length of the text string, preContextText string, and postContextText string may not exceed 10,000 characters. You may specify this parameter in the query string of a GET request or in the body of a POST request. Because of the query string length limit, you'll typically use a POST request unless you're checking only short strings.",
+                    "type": "string"
+                }
+            }
+        },
+        "X_BingApis_SDK": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "true"
+            ]
+        },
+        "Accept_Language": {
+            "required": false,
+            "type": "string"
+        },
+        "User_Agent": {
+            "required": false,
+            "type": "string"
+        },
+        "X_MSEdge_ClientID": {
+            "required": false,
+            "type": "string"
+        },
+        "X_MSEdge_ClientIP": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Search_Location": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
